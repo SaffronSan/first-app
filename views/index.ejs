@@ -1,0 +1,63 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Advance Fourm</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  />
+</head>
+<body>
+  <section class="header">
+    <label>TOP AREA</label>
+  </section>
+  <section id="barea">
+    <div class="organ" id="odiv0">
+      <div class="+" id="adiv">
+        <label>Add Questions</label>
+        <hr
+          style="
+            width: 100%;
+            margin: 0px;
+            border-bottom: 1px solid white;
+            border-top: hidden;
+            border-left: hidden;
+            border-right: hidden;
+          "
+        />
+        <i id="add" class="material-icons dot">add</i>
+        <select id="qsel">
+          <option value="regular">regular</option>
+          <option value="poll">poll</option>
+          <option value="Input">Input</option>
+        </select>
+      </div>
+    </div>
+  </section>
+  <section id="bottom">
+    <section hidden id="login">
+      <label>Before you save we need some info</label>
+      <form action="./index.ejs" method="post">
+        <textarea hidden for="container" name="container" id="json"></textarea>
+        <div>
+          <label for="userName">Name</label>
+          <input for="userName" name="userName" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input for="email" name="email" required />
+        </div>
+        <div>
+          <label for="title">Title</label>
+          <input for="title" name="title" required />
+        </div>
+        <button id="save2" type="submit">Submit</button>
+      </form>
+    </section>
+    <i id="save" class="material-icons dot" style="width: 25px; height: 25px"
+      >save</i
+    >
+  </section>
+  <script src="/JavaScript/server.js"></script>
+</body>
