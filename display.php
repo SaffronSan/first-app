@@ -1,9 +1,4 @@
-<html>
-<head>
-    <title>PHP_Display</title>
-</head>
-<body>
-    <?php 
+<?php 
         $conn = new mysqli("localhost", "root", "password","umk");
         if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);}
         $sql = "select * from localtable";
@@ -14,6 +9,4 @@
             }
         }
         mysqli_close($conn);
-    ?>
-</body>
-</html>
+?>
