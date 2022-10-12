@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Display</title>
+</head>
+<body>
+    <div>
+        <input id ="src" type = 'button' placeholder="c" onclick="getSql()">
+        <input type="text" class="icon" value placeholder="Search">
+        <input type="button" class = "re" style = "width:20px;">
+    </div>
+    <div id = "data"></div>
+    <script>
+            function getSql(){
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log("Okay!");
+                        $("#data").text(this.responseText);
+                    }
+                };
+                xmlhttp.open("GET","display.php?",true);
+                xmlhttp.send();
+            }
+
+    </script>
+    <style>
+        div{display:flex;}
+        .icon {
+            padding-left: 25px;
+            background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+            background-size: 20px;
+        }
+        .re{
+            background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDkwLjk3IDI4MC4zLTI3LjA4NiAyMy43M2MxOC42NDEgMjEuMjc3IDI4LjkwNiA0OC41OTQgMjguOTA2IDc2LjkxOCAwIDY0LjM5OC01Mi4zOTEgMTE2Ljc5LTExNi43OSAxMTYuNzktNjQuMzk4IDAtMTE2Ljc5LTUyLjM5MS0xMTYuNzktMTE2Ljc5IDAtNTguNjcyIDQzLjQ4OC0xMDcuMzcgOTkuOTI2LTExNS41N2wtMTQuMzQgMjQuNjkxIDEwNy40OC00My45MTgtMTA3LjQ4LTQzLjkwNiAxNS41MTIgMjYuNzA3Yy03Ni45MSA3Ljg4NjctMTM3LjExIDczLjA0Ny0xMzcuMTEgMTUyIDAgODQuMjU0IDY4LjU0NyAxNTIuOCAxNTIuOCAxNTIuOHMxNTIuOC02OC41NDcgMTUyLjgtMTUyLjhjMC0zNy4wNjYtMTMuNDM0LTcyLjgxMi0zNy44MzItMTAwLjY2eiIvPgo8L3N2Zz4K") no-repeat left;
+            background-size: 20px;
+            padding:0px;
+        }
+    </style>
+</body>
+</html>
